@@ -1,6 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
+gem 'haml'
+gem 'jquery-rails'
+gem 'devise', :git => 'git://github.com/plataformatec/devise', :branch => 'master'
+gem 'nifty-generators'
+gem "oa-oauth", :require => "omniauth/oauth"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
