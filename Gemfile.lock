@@ -60,6 +60,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.10)
+      rake
     multi_json (0.0.5)
     multipart-post (1.0.1)
     nifty-generators (0.4.2)
@@ -112,6 +114,7 @@ DEPENDENCIES
   devise!
   haml
   jquery-rails
+  mocha
   nifty-generators
   oa-oauth
   rails (= 3.0.1)

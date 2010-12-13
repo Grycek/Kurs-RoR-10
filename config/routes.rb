@@ -1,4 +1,9 @@
 Try2::Application.routes.draw do
+  devise_for :users
+
+  resources :songs
+  root :to => "songs#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

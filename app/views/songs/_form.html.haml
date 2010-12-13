@@ -1,0 +1,12 @@
+- form_for @song do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :artist
+    %br
+    = f.text_field :artist
+  %p
+    = f.submit
