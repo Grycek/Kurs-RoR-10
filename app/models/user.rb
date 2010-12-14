@@ -16,8 +16,6 @@ class User < ActiveRecord::Base
     else # Create an user with a stub password. 
       user = User.create!(:email => data["email"], :password => Devise.friendly_token[0,20]) 
     end
-    puts 'Token find_fooooooooor:', access_token['credentials']['token']
-    #user.authentications.build(:provider => access_token['provider'], :uid => access_token['uid'], :token =>( access_token['credentials']['token'] rescue nil))
     auth       = user.authentications.find_or_create_by_provider_and_uid(access_token['provider'], access_token['uid'])
     auth.token = access_token['credentials']['token']
     auth.save!
@@ -34,7 +32,6 @@ class User < ActiveRecord::Base
   end
   
   def facebook
-    puts 'Toooken:',self.authentications.find_by_provider('facebook').token
     @fb_user ||= FbGraph::User.me(self.authentications.find_by_provider('facebook').token)
   end
   
