@@ -14,4 +14,13 @@ class User < ActiveRecord::Base
     User.create!(:email => data["email"], :password => Devise.friendly_token[0,20]) 
   end
  end 
+ 
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"]
+        user.email = data["email"]
+      end
+    end
+  end
+  
 end
