@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'devise', :git => 'git://github.com/plataformatec/devise', :branch => 'master'
 gem 'nifty-generators'
 gem "oa-oauth", :require => "omniauth/oauth"
+gem 'fb_graph'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

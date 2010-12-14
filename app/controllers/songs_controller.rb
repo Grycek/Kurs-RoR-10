@@ -15,7 +15,9 @@ class SongsController < ApplicationController
     @song = Song.new(params[:song])
     if @song.save
       flash[:notice] = "Successfully created song."
-      redirect_to @song
+      current_user.facebook.feed!(:message => "Dodales utwor: #{@song.artist} - #{@song.title}", :name => 'Task 10') if current_user
+      flash[:notice] += "Published on wall" if current_user
+      redirect_to songs_path
     else
       render :action => 'new'
     end
